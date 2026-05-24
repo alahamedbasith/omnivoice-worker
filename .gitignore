@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+ENV/
+.env/
+.venv/
+
+# Node modules
+node_modules/
+
+# Distribution / packaging
+build/
+dist/
+.eggs/
+*.egg-info/
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+
+# Runtime files
+*.pid
+*.seed
+*.pid.lock
+
+# Misc
+coverage/
+htmlcov/
+.pytest_cache/
+
+# Ignore generated files
+*.bak
+*.tmp
+*.swp

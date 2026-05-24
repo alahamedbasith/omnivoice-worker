@@ -1,0 +1,22 @@
+# RunPod Serverless Worker — Python dependencies
+# NOTE: torch and torchaudio are already in the base Docker image.
+#       We list them here anyway so local dev environments work too.
+#       Docker's pip will just upgrade/confirm the existing version.
+ 
+# ── RunPod SDK ────────────────────────────────────────────────────────────────
+runpod>=1.6.0               # RunPod serverless SDK (provides runpod.serverless.start)
+ 
+# ── Core ML ───────────────────────────────────────────────────────────────────
+torch>=2.1.0
+torchaudio>=2.1.0
+ 
+# ── Audio I/O ─────────────────────────────────────────────────────────────────
+soundfile>=0.12.1           # Read/write WAV files
+numpy>=1.24.0
+ 
+# ── HuggingFace model download ────────────────────────────────────────────────
+huggingface_hub>=0.20.0     # snapshot_download() for pulling from HF
+ 
+# ── OmniVoice (install directly from GitHub) ─────────────────────────────────
+git+https://github.com/k2-fsa/OmniVoice.git
+ 
