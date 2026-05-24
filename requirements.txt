@@ -1,22 +1,23 @@
 # RunPod Serverless Worker — Python dependencies
-# NOTE: torch and torchaudio are already in the base Docker image.
-#       We list them here anyway so local dev environments work too.
-#       Docker's pip will just upgrade/confirm the existing version.
- 
+
 # ── RunPod SDK ────────────────────────────────────────────────────────────────
-runpod>=1.6.0               # RunPod serverless SDK (provides runpod.serverless.start)
- 
+runpod>=1.6.0
+
 # ── Core ML ───────────────────────────────────────────────────────────────────
-torch>=2.1.0
-torchaudio>=2.1.0
- 
+# Pinned to match base image pytorch/pytorch:2.2.0-cuda12.1-cudnn8-runtime
+torch==2.2.0
+torchaudio==2.2.0
+torchvision==0.17.0         # MUST match torch 2.2.0 exactly — fixes torchvision::nms error
+
+# ── Transformers — needs latest for HiggsAudioV2TokenizerModel support ────────
+transformers>=4.52.0        # fixes: ModuleNotFoundError HiggsAudioV2TokenizerModel
+
 # ── Audio I/O ─────────────────────────────────────────────────────────────────
-soundfile>=0.12.1           # Read/write WAV files
+soundfile>=0.12.1
 numpy>=1.24.0
- 
+
 # ── HuggingFace model download ────────────────────────────────────────────────
-huggingface_hub>=0.20.0     # snapshot_download() for pulling from HF
- 
-# ── OmniVoice (install directly from GitHub) ─────────────────────────────────
+huggingface_hub>=0.20.0
+
+# ── OmniVoice ─────────────────────────────────────────────────────────────────
 git+https://github.com/k2-fsa/OmniVoice.git
- 
