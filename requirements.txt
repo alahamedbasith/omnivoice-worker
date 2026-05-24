@@ -1,16 +1,15 @@
 # RunPod Serverless Worker — Python dependencies
+# NOTE: torch and torchaudio are already installed in the base image via conda.
+#       Do NOT re-install them here — causes pip/conda conflicts.
 
 # ── RunPod SDK ────────────────────────────────────────────────────────────────
 runpod>=1.6.0
 
-# ── Core ML ───────────────────────────────────────────────────────────────────
-# Pinned to match base image pytorch/pytorch:2.2.0-cuda12.1-cudnn8-runtime
-torch==2.2.0
-torchaudio==2.2.0
-torchvision==0.17.0         # MUST match torch 2.2.0 exactly — fixes torchvision::nms error
+# ── torchvision (not in base image, must install separately) ──────────────────
+torchvision==0.20.1         # matches torch 2.5.1 in base image
 
-# ── Transformers — needs latest for HiggsAudioV2TokenizerModel support ────────
-transformers>=4.52.0        # fixes: ModuleNotFoundError HiggsAudioV2TokenizerModel
+# ── Transformers — latest version needed for HiggsAudioV2TokenizerModel ───────
+transformers>=4.52.0
 
 # ── Audio I/O ─────────────────────────────────────────────────────────────────
 soundfile>=0.12.1
