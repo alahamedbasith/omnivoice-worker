@@ -50,6 +50,11 @@ coverage/
 htmlcov/
 .pytest_cache/
 
+# Audio artifacts (large binaries, generated output)
+*.wav
+output_cloned.wav
+
+
 # Ignore generated files
 *.bak
 *.tmp
