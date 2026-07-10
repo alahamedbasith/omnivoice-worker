@@ -27,6 +27,8 @@ import os
 from typing import Optional, Union
 
 import httpx
+from dotenv import load_dotenv
+load_dotenv()
 
 
 class OmnivoiceClient:

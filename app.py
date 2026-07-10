@@ -25,6 +25,8 @@ import os
 from typing import Optional
 
 import httpx
+from dotenv import load_dotenv
+load_dotenv()
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.responses import Response
 
